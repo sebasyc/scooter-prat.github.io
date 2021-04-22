@@ -1,0 +1,356 @@
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+@import 'ceraround';
+
+body {
+	background-color: #F0F0F0;
+	font-size: 100%;
+	font-family: $cera-round-400;
+}
+
+@include selection {
+	background-color: $red;
+	color: white;
+}
+
+header {
+	padding: 1em 0;
+	@media (max-width: 480px) {
+		padding: .5em 0 0;
+	}
+	.head-logo {
+		display: flex;
+		justify-content: center;
+		a {
+			position: relative;
+			display: block;
+		}
+	}
+}
+.content-landing {
+	padding: .5em 0 0;
+	@media (max-width: 991px) {
+		padding: 2em 0;
+	}
+	@media (max-width: 480px) {
+		padding: 1em 0 3em;
+	}
+	.row-landing {
+		align-items: center;
+		&__col {
+			width: 50%;
+			padding: 0 15px;
+			@media (max-width: 991px) {
+				width: 100%;
+			}
+			&--detail {
+				text-align: center;
+				@media (max-width: 991px) {
+					margin-bottom: 2em;
+				}
+				h1 {
+					padding: .5em 0 0;
+					font-size: 2.25em;
+					color: $red;
+					font-family: $cera-round-900;
+					line-height: .875em;
+					span {
+						font-family: $cera-round-300;
+					}
+					@media (max-width: 480px) {
+						font-size: 1.75em;
+					}
+				}
+				h2 {
+					padding: .15em 0 0;
+					font-size: 1.25em;
+					color: $red;
+					font-family: $cera-round-700;
+					line-height: 1.75em;
+					@media (max-width: 480px) {
+						width: 80%;
+						margin: 0 auto;
+						font-size: 1em;
+						line-height: 1.25em;
+					}
+					span {
+						display: block;
+						font-size: 2.5em;
+						font-family: $cera-round-900;
+						@media (max-width: 480px) {
+							line-height: 1em;
+						}
+					}
+				}
+				h3 {
+					font-size: 1.125em;
+					color: $red;
+					font-family: $cera-round-400;
+					span {
+						display: block;
+						a {
+							font-family: $cera-round-900;
+							color: $red;
+						}
+					}
+				}
+				.list-marcas {
+					display: flex;
+					justify-content: center;
+					@media (max-width: 480px) {
+						flex-wrap: wrap;
+					}
+					li {
+						width: 100px;
+						padding: .35em;
+						@media (max-width: 480px) {
+							width: 33.33333%;
+						}
+						img {
+							display: block;
+							width: 100%;
+						}
+					}
+				}
+				.box-img {
+					position: relative;
+					padding: .5em 0 1em;
+					text-align: center;
+					@media (max-width: 480px) {
+						margin: 0 -15px;
+					}
+					&__txt {
+						position: absolute;
+						width: 40%;
+						right: 75px;
+						top: 60px;
+						@media (max-width: 480px) {
+							width: 55%;
+							right: 16px;
+						}
+						@media (max-width: 325px) {
+							width: 60%;
+							top: 14px;
+						}
+						h3 {
+							padding: 0 0 .5em;
+							font-size: 1em;
+							color: $red;
+							font-family: $cera-round-700;
+						}
+						p {
+							padding: 0;
+							color: black;
+							font-family: $cera-round-700;
+							line-height: 1em;
+							span {
+								font-size: .75em;
+							}
+						}
+					}
+					&__bg {
+						width: 400px;
+						margin: 0 auto;
+						@media (max-width: 480px) {
+							width: 100%;
+							margin: 0;
+						}
+					}
+					&__premios {
+						position: absolute;
+						width: 430px;
+						right: -5em;
+						opacity: 0;
+						transition: 1.5s;
+						@media (max-width: 480px) {
+							width: 395px;
+						}
+					}
+					&__marca {
+						position: absolute;
+						width: 115px;
+						bottom: 1.5em;
+						@include center-x;
+						@media (max-width: 480px) {
+							margin: 0;
+							left: 1em;
+						}
+					}
+					&.active {
+						.box-img {
+							&__premios {
+								opacity: 1;
+								right: 4em;
+								bottom: 2em;
+								@media (max-width: 480px) {
+									right: 0;
+									bottom: 1em;
+								}
+							}
+						}
+					}
+				}
+				.btn-bases {
+					display: block;
+					width: 90px;
+					height: 25px;
+					margin: 1.25em auto 0;
+					background-color: $red;
+					border-radius: 50px;
+					font-size: .75em;
+					color: white;
+					font-family: $cera-round-600;
+					text-align: center;
+					line-height: 25px;
+					z-index: 1;
+					transition: .3s;
+					&:hover {
+						background-color: $blue;
+					}
+				}
+				.logo-promo {
+					img {
+						width: 250px;
+						@media (max-width: 480px) {
+							width: 180px;
+						}
+					}
+				}
+			}
+			&--form {
+				h2 {
+					padding: 0 0 .75em;
+					font-size: 1.75em;
+					color: $red;
+					font-family: $cera-round-700;
+					text-align: center;
+				}
+				.box-input {
+					width: 85%;
+					margin: 0 auto;
+					padding: .5em 0;
+					@media (max-width: 768px) {
+						width: 100%;
+					}
+					label {
+						margin: 0 0 .15em;
+						color: $blue;
+						font-family: $cera-round-700;
+					}
+					input {
+						display: block;
+						width: 100%;
+						padding-left: 1em;
+						height: 40px;
+						border: 1px solid transparent;
+						border-radius: 6px;
+						color: $blue;
+						font-family: $cera-round-600;
+						transition: .3s;
+						@include placeholder {
+							font-size: .875em;
+							color: #999999;
+							font-family: $cera-round-300;
+						}
+						&:focus {
+							border-color: $red;
+							box-shadow: 0 0 20px rgba(204,59,48,.15);
+						}
+						&:not(:placeholder-shown) {
+							border-color: $red;
+						}
+					}
+					&--boleta {
+						label {
+							color: $red;
+						}
+					}
+				}
+				.btn-enviar {
+					display: block;
+					margin: 1em auto 0;
+					width: 130px;
+					height: 45px;
+					background-color: $red;
+					border: none;
+					border-radius: 6px;
+					font-size: 1.25em;
+					color: white;
+					font-family: $cera-round-700;
+					text-transform: uppercase;
+					transition: .3s;
+					&:hover {
+						transform: translate(0,-3px);
+						box-shadow: 0 5px 20px rgba(204,59,48,.5);
+					}
+				}
+			}
+		}
+	}
+	.box-exito {
+		padding: 3em 0 0;
+		h1 {
+			font-size: 2em;
+			color: $red;
+			font-family: $cera-round-400;
+			text-align: center;
+			@media (max-width: 480px) {
+				font-size: 1.5em;
+			}
+			span {
+				display: block;
+				font-size: 1.35em;
+				font-family: $cera-round-700;
+			}
+		}
+		p {
+			padding: 1.5em 0 0;
+			font-size: 1em;
+			color: $blue;
+			font-family: $cera-round-600;
+			text-align: center;
+			a {
+				color: $red;
+				font-family: $cera-round-700;
+			}
+		}
+		.btn-return {
+			display: block;
+			margin: 1em auto 0;
+			width: 180px;
+			height: 45px;
+			background-color: $red;
+			border: none;
+			border-radius: 6px;
+			font-size: 1.125em;
+			text-align: center;
+			line-height: 45px;
+			color: white;
+			font-family: $cera-round-700;
+			text-transform: uppercase;
+			transition: .3s;
+			&:hover {
+				transform: translate(0,-3px);
+				box-shadow: 0 5px 20px rgba(204,59,48,.5);
+			}
+		}
+	}
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	margin: 2em 0 1em;
+	text-align: center;
+	p {
+		padding-right: .35em;
+		font-size: .75em;
+		color: #999999;
+	}
+	img {
+		width: 80px;
+		opacity: .5;
+	}
+}
